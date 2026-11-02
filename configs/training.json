@@ -1,0 +1,42 @@
+{
+  "experiment_id": "edm_teacher_100k_20261101",
+  "method": "EDM preconditioning and log-normal training loss with the existing 89.6M UNet",
+  "noise_embedding": "0.25 * log(sigma) * 250 into existing sinusoidal timestep embedding",
+  "sigma_data": 0.5,
+  "p_mean": -1.2,
+  "p_std": 1.2,
+  "class_dropout": 0.1,
+  "batch_size": 64,
+  "microbatch": 32,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0,
+  "ema_decay": 0.9999,
+  "gradient_clip": 1.0,
+  "seed": 42,
+  "training_updates": 100000,
+  "save_interval": 1000,
+  "evaluation_updates": [
+    100000
+  ],
+  "automatic_gates": {
+    "100k": "Finish at 100K and assess Official FID before any further extension."
+  },
+  "evaluation": {
+    "reference": "official validation only",
+    "generated_count": 3020,
+    "images_per_class": 20,
+    "seed_base": 42,
+    "batch_size": 16,
+    "cfg": 2.5,
+    "edm_steps": 18,
+    "sigma_min": 0.002,
+    "sigma_max": 80.0,
+    "rho": 7.0,
+    "baseline_teacher_ddim_steps": 32,
+    "warning": "Seed42 Official FID used for experiment decisions; 50K raw and 100K EMA evaluated with 70 NFE; first 20K used 16324 training images."
+  },
+  "training_split": "train_split.txt",
+  "training_count": 17079,
+  "training_manifest_sha256": "c4068bdec8c5994fa14887d3335e762dd6a4da1bc6394a6df7fae96d293138c0",
+  "migration": "Resume the full 50K model, EMA, optimizer, RNG, data epoch and cursor unchanged from edm_teacher_fulltrain_20261031; new plan identity records 100K target."
+}
