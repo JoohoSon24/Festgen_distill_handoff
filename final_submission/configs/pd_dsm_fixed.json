@@ -1,0 +1,12 @@
+{
+ "_note": "Per-stage update counts are fixed constants, copied from the exploratory run (distill/runs/main): the update whose EMA was handed to the next stage, chosen there by train-loss convergence + 755-image dev-holdout FID. No FID of any kind is computed by the submission pipeline. null = stage not yet decided.",
+ "stage_updates": {"32": 1900, "16": 15500, "8": null, "4": null, "2": null, "1": null},
+ "stages": [32, 16, 8, 4, 2, 1],
+ "master_steps": 64, "sigma_min": 0.002, "sigma_max": 80.0, "rho": 7.0, "sigma_data": 0.5,
+ "cfg": 2.5, "dsm_weight": 0.1, "p_mean": -1.2, "p_std": 1.2,
+ "batch": 64, "micro": 32, "lr": 0.0001, "ema": 0.999, "clip": 1.0, "seed": 42,
+ "save_every": 500, "log_every": 20, "vram_limit": 20000000000.0,
+ "teacher": "checkpoints/edm_100k_ema.pt",
+ "teacher_sha256": "816638eab17241bcabf07eadcbf49f3ee2f0c03b8f76e8d83d811ee15cf437cc",
+ "train_manifest": "data/development/seed42_holdout5/train.txt"
+}

@@ -1,0 +1,10 @@
+{
+  "source": "official train_split.txt only",
+  "seed": 42,
+  "holdout_per_class": 5,
+  "train_count": 16324,
+  "holdout_count": 755,
+  "num_classes": 151,
+  "source_train_sha256": "c4068bdec8c5994fa14887d3335e762dd6a4da1bc6394a6df7fae96d293138c0",
+  "source_validation_sha256": "6dfba46a82c1bb329287d6da0f87be1b3b71d26c217150bf681f37cce4264df0"
+}
